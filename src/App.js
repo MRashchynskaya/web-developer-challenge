@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import 'normalize.css';
+import {
+  Box
+} from 'rebass';
+
+import { ThemeProvider } from 'emotion-theming';
+import theme from './theme';
+import Slider from './components/Slider';
+import CompareProducts from './components/CompareProducts';
+import InformationBlock from './components/InformationBlock';
+
+const container = {
+  maxWidth: '1440px',
+  mx: 'auto'
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Box sx={container}>
+        <Header />
+        <Box as="main">
+          <Slider />
+          <CompareProducts />
+          <InformationBlock />
+        </Box>
+      </Box>
+    </ThemeProvider >
   );
 }
 
