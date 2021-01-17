@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Link, Box, Heading, Text } from "rebass";
+import { Flex, Box, Heading, Text } from "rebass";
 
 const features = [
   {
@@ -29,33 +29,35 @@ const features = [
   },
 ];
 
+const informationBlockItemStyles = {
+  flexDirection: ["column", "row"],
+  justifyContent: "space-between",
+};
+
+const headingStyles = {
+  fontSize: [4, 5],
+  mb: [3, 3],
+  flexBasis: [null, "25%"],
+};
+
+const textStyles = {
+  fontSize: [2, 4],
+  flexBasis: [null, "45%"],
+  lineHeight: ["1.4", "1.2"],
+};
+
 const InformationBlockItem = ({ title, text, sx }) => {
   return (
     <Flex
       sx={{
-        flexDirection: ["column", "row"],
-        justifyContent: "space-between",
+        ...informationBlockItemStyles,
         ...sx,
       }}
     >
-      <Heading
-        as="h3"
-        fontSize={[4, 5]}
-        mb={[3, 3]}
-        sx={{
-          flexBasis: [null, "25%"],
-        }}
-      >
+      <Heading as="h3" sx={headingStyles}>
         {title}
       </Heading>
-      <Text
-        as="p"
-        sx={{
-          fontSize: [2, 4],
-          flexBasis: [null, "45%"],
-          lineHeight: ['1.4', '1.2']
-        }}
-      >
+      <Text as="p" sx={textStyles}>
         {text}
       </Text>
     </Flex>

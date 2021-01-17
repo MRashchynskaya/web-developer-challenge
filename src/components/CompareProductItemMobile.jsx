@@ -53,10 +53,8 @@ const CompareProductItemMobile = (props) => {
           return (
             <Heading
               as="h3"
-              fontSize={[4, "56px"]}
-              mb={2}
               key={i}
-              sx={compareItemWrapStyles}
+              sx={{ ...compareItemWrapStyles, fontSize: [4, "56px"], mb: 2 }}
             >
               {title}
             </Heading>
@@ -92,9 +90,9 @@ const CompareProductItemMobile = (props) => {
                   </Heading>
                   <Text
                     as="p"
-                    fontSize={2}
-                    lineHeight={"1.4"}
                     sx={{
+                      fontSize: 2,
+                      lineHeight: "1.4",
                       width: "90%",
                     }}
                   >

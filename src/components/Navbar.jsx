@@ -13,20 +13,34 @@ const links = [
   "Blog",
 ];
 
+const menuWrapMobileStyles = {
+  bg: "white",
+  position: "absolute",
+  top: "100%",
+  left: "0px",
+  height: "calc(100vh - 54px)",
+  width: "100%",
+};
+
+const menuMobileStyles = {
+  alignItems: "center",
+  display: "block",
+  borderTop: "1px solid",
+  borderBottom: "1px solid",
+  borderColor: "gray",
+  py: 4,
+  mb: 4,
+};
+
 const Navbar = () => {
   const [isMenuOpen, toggleMenu] = useState(false);
 
   return (
-    <Flex
-      as="nav"
-      sx={{
-        flex: "1 1 auto",
-      }}
-    >
+    <>
       <Button
         variant="buttons.iconBtn"
         ml="auto"
-        display={['block', 'none']}
+        display={["block", "none"]}
         onClick={() => {
           toggleMenu(!isMenuOpen);
         }}
@@ -41,60 +55,53 @@ const Navbar = () => {
         />
         {isMenuOpen ? "Close menu" : "Open menu"}
       </Button>
-      <Box
+      <Flex
+        as="nav"
         sx={{
-          display: isMenuOpen ? "block" : "none",
-          bg: "white",
-          position: "absolute",
-          top: "100%",
-          left: "0px",
-          height: "calc(100vh - 54px)",
-          width: "100%",
+          flex: [null, "1 0 auto"],
         }}
       >
         <Box
-          as="ul"
           sx={{
-            alignItems: "center",
-            display: "block",
-            borderTop: "1px solid",
-            borderBottom: "1px solid",
-            borderColor: "gray",
-            py: [4, 0],
-            mb: [4, 0],
+            ...menuWrapMobileStyles,
+            display: isMenuOpen ? "block" : "none",
           }}
         >
-          {links.map((item, i) => {
-            return (
-              <Text as="li" key={i}>
-                <Link href="#" variant="link.navigationLink">
-                  {item}
-                </Link>
-              </Text>
-            );
-          })}
+          <Box as="ul" sx={menuMobileStyles}>
+            {links.map((item, i) => {
+              return (
+                <Text as="li" key={i}>
+                  <Link href="#" variant="link.navigationLink">
+                    {item}
+                  </Link>
+                </Text>
+              );
+            })}
+          </Box>
+          <MenuActions />
         </Box>
-        <MenuActions />
-      </Box>
-      <Box
-        as="ul"
-        sx={{
-          alignItems: "center",
-          display: "none",
-        }}
-      >
-        {links.map((item, i) => {
-          return (
-            <Text as="li" key={i}>
-              <Link href="#" variant="link.navigationLink">
-                {item}
-              </Link>
-            </Text>
-          );
-        })}
-      </Box>
-      {/* <MenuActions /> */}
-    </Flex>
+        {/* Mobile and desktop menu can be very different visually, in this case it would be better to separate them into different components */}
+        <Box
+          sx={{
+            display: ["none", "flex"],
+            flex: "1",
+          }}
+        >
+          <Flex as="ul">
+            {links.map((item, i) => {
+              return (
+                <Text as="li" key={i}>
+                  <Link href="#" variant="link.navigationLink">
+                    {item}
+                  </Link>
+                </Text>
+              );
+            })}
+          </Flex>
+          <MenuActions />
+        </Box>
+      </Flex>
+    </>
   );
 };
 

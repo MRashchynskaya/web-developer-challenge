@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Image } from "rebass";
+import { Flex, Image, Link } from "rebass";
 import logo from "../assets/airtame-logo-inline-black.svg";
 import Navbar from "./Navbar";
 
@@ -19,7 +19,9 @@ const logoStyles = {
 const Header = () => {
   return (
     <Flex as="header" sx={headerStyles}>
-      <Image src={logo} alt="logo" sx={logoStyles} />
+      <Link href="#">
+        <Image src={logo} alt="logo" sx={logoStyles} />
+      </Link>
       <Navbar />
     </Flex>
   );
