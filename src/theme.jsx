@@ -14,6 +14,7 @@ const navBarLinks = {
 };
 
 const theme = {
+  breakpoints: ["45em", "52em", "64em"],
   space: [0, 5, 10, 15, 20, 30, 40].map((n) => n + "px"),
   fontSizes: [12, 14, 16, 20, 24, 32, 40, 48, 64].map((n) => n + "px"),
   fonts: {
