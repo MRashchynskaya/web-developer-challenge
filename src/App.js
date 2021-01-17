@@ -11,8 +11,9 @@ import CompareProducts from './components/CompareProducts';
 import InformationBlock from './components/InformationBlock';
 
 const container = {
-  maxWidth: '1440px',
-  mx: 'auto'
+  maxWidth: '1480px',
+  mx: 'auto',
+  px: [null, 4]
 }
 
 function App() {

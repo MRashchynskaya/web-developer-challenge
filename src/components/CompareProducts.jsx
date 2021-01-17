@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "rebass";
+import { Box, Text } from "rebass";
 import appleTv from "../assets/Apple-tv.png";
 import airtamePhoto from "../assets/Airtame.png";
 import CompareProductItem from "./CompareProductItem";
@@ -57,10 +57,38 @@ const products = [
   },
 ];
 
+const versusElementStyles = {
+  display: [null, "flex"],
+  testTransform: "uppercase",
+  position: "absolute",
+  width: "100px",
+  height: "100px",
+  fontSize: 6,
+  borderRadius: "circle",
+  bg: "#181c28",
+  top: "30%",
+  left: "50%",
+  transform: "translateX(-50%)",
+  color: "white",
+  justifyContent: "center",
+  alignItems: "center",
+  lineHeight: "1",
+  fontWeight: "bold",
+};
+
+const compareProductsWrapStyles = {
+  mb: [5, "160px"],
+  display: ["none", "flex"],
+  position: "relative",
+};
+
 const CompareProducts = () => {
   return (
     <>
-      <Box mb={[5, "160px"]} display={["none", "flex"]}>
+      <Box sx={compareProductsWrapStyles}>
+        <Text sx={versusElementStyles}>
+          <Text height="50px">vs</Text>
+        </Text>
         {products.map((item, i) => {
           return (
             <CompareProductItem
