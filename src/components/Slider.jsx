@@ -63,7 +63,7 @@ const Slider = () => {
               setActive(!isActive);
             }}
           >
-            <Image src={AppleTv} sx={imageStyles} />
+            <Image src={AppleTv} sx={imageStyles} alt="AppleTv picture" />
             <Text as="figcaption" textAlign="center" fontWeight="bold">
               Apple TV
             </Text>
@@ -77,7 +77,7 @@ const Slider = () => {
               setActive(!isActive);
             }}
           >
-            <Image src={chromecast} sx={imageStyles} />
+            <Image src={chromecast} sx={imageStyles} alt="Chromecast picture" />
             <Text as="figcaption" textAlign="center" fontWeight="bold">
               Chromecast
             </Text>
@@ -91,7 +91,11 @@ const Slider = () => {
               setActive(!isActive);
             }}
           >
-            <Image src={chromecast} sx={imageStyles} />
+            <Image
+              src={chromecast}
+              sx={imageStyles}
+              alt="Click Share picture"
+            />
             <Text as="figcaption" textAlign="center" fontWeight="bold">
               Click Share
             </Text>
@@ -105,7 +109,7 @@ const Slider = () => {
               setActive(!isActive);
             }}
           >
-            <Image src={wepresent} sx={imageStyles} />
+            <Image src={wepresent} sx={imageStyles} alt="wePresent picture" />
             <Text as="figcaption" textAlign="center" fontWeight="bold">
               wePresent
             </Text>
@@ -119,7 +123,7 @@ const Slider = () => {
               setActive(!isActive);
             }}
           >
-            <Image src={creston} sx={imageStyles} />
+            <Image src={creston} sx={imageStyles} alt="Creston picture" />
             <Text as="figcaption" textAlign="center" fontWeight="bold">
               Creston
             </Text>
@@ -133,7 +137,11 @@ const Slider = () => {
               setActive(!isActive);
             }}
           >
-            <Image src={actiontech} sx={imageStyles} />
+            <Image
+              src={actiontech}
+              sx={imageStyles}
+              alt="Action Tech picture"
+            />
             <Text as="figcaption" textAlign="center" fontWeight="bold">
               Action Tech
             </Text>
@@ -147,7 +155,7 @@ const Slider = () => {
               setActive(!isActive);
             }}
           >
-            <Image src={mersive} sx={imageStyles} />
+            <Image src={mersive} sx={imageStyles} alt="Mersive picture" />
             <Text as="figcaption" textAlign="center" fontWeight="bold">
               Mersive
             </Text>
@@ -164,7 +172,11 @@ const Slider = () => {
               setActive(!isActive);
             }}
           >
-            <Image src={chevronRight} sx={sliderChevronStyles} />
+            <Image
+              src={chevronRight}
+              sx={sliderChevronStyles}
+              alt="chevron button"
+            />
           </Text>
         </Text>
       </Flex>
